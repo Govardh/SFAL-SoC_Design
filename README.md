@@ -1,7 +1,7 @@
                                                   SoC Design and Implementation Course
 Welcome to the SoC Design and Implementation course repository! This program coveres the full spectrum of semiconductor design, equipping participants with the skills needed to master the entire SoC (System on Chip) design process. From foundational concepts to real-world design challenges, this course offers a unique blend of theoretical learning, practical application, and professional development.
 
-This repository will contain all the course materials, design projects, and documentation developed during the program. Start your journey to becoming an expert in SoC design!
+This repository will contain all the course materials, design projects, and documentation developed during the program. 
 
 Tools - Synopsys
 
