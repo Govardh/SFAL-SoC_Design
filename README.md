@@ -1,4 +1,4 @@
-                                                                                SoC Design and Implementation Course
+                                                                SoC Design and Implementation Course
 Welcome to the SoC Design and Implementation course repository! This program coveres the full spectrum of semiconductor design, equipping participants with the skills needed to master the entire SoC (System on Chip) design process. From foundational concepts to real-world design challenges, this course offers a unique blend of theoretical learning, practical application, and professional development.
 
 Course overview:
