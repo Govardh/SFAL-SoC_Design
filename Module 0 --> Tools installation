@@ -1,4 +1,4 @@
- #this is a heading #
+## This is a heading 
 install yosys ,iverilog and gtkwave
 this is a  sub-heading #
 1.1: install yosys 
