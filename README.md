@@ -1,42 +1,21 @@
-# SFAL-VSD-SoC-Design Program Progress
-
-This repository documents my journey through the SFAL-VSD-SoC-Design program organized by NASSCOM. The program focuses on system-on-chip (SoC) design, providing hands-on experience and practical knowledge in various aspects of VLSI and SoC development.
-
-## Overview of the Digital VLSI System-on-Chip (SoC) design and planning process
-
-1. **Chip Modeling**
-   - Achieve equivalence between the original specification model (O0) and the C model (O1).
-
-2. **RTL Architecture**
-   - Ensure equivalence between the specification model (O1) and the Register Transfer Level (RTL) representation (O2).
-
-3. **SoC Design Flow**
-   - Divide the chip design into processors and peripherals/IPs.
-
-4. **SoC Integration**
-   - Confirm equivalence across all stages (O1 == O2 == O3).
-
-5. **GDSII Creation**
-   - Prepare graphical data structure stream information for interchange.
-   - Ensure all models are equivalent (O1 == O2 == O3 == O4).
+# Welcome to My SoC Design and Implementation Journey!
 
 
-## Repository Structure
+This repository documents my progress and key learnings from the 12-week SoC Design and Implementation course. Here, you'll find a comprehensive overview of my work, covering everything from foundational semiconductor concepts to advanced project implementations. This course, guided by industry experts, provides hands-on experience with Synopsys tools 
 
-	•	Day-wise Progress: Each folder contains a detailed breakdown of daily tasks, summaries of learning, tool installations, and code or design files.
-	•	Tools and Setup: Step-by-step documentation of the tools required for the program, along with installation guides and configuration snapshots.
+## What You’ll Find in This Repository :
 
-## Objectives
+* Course Materials: Notes and key takeaways from each module.
+* Design Projects: Step-by-step design implementations, focusing on both foundational exercises and the final real-world project.
+* Specialization Topic: Deep dive into the area of semiconductor design that I’ve chosen to specialize in.
 
-	•	Learn the fundamentals of SoC design.
-	•	Gain hands-on experience with industry-standard tools and workflows.
-	•	Document daily progress to track growth and improvements.
-	•	Showcase projects and learning outcomes.
- 
-## Learning Milestones
+## Tools I’m Using :
 
-## Task Index
+* Design Compiler : For synthesizing HDLs into gate-level representations.
+* IC Compiler : Ensuring the optimal layout of chip designs.
+* PrimeTime : Performing timing analysis to meet design constraints.
+* StarRC : For precise parasitic extraction and post-layout simulation.
+* HSPICE : Gold standard for accurate circuit simulation and verification.
+* Custom Compiler : Used for custom integrated circuit design.
+* IC Validator : Critical for physical verification, ensuring my designs pass DRC and LVS checks.
 
-| Day       | Folder          | Task Description                                           |
-|-----------|------------------|-----------------------------------------------------------|
-| [Day 1](Day1/)  | `Day1/`        | 1. Tools Installation  |
