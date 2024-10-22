@@ -15,6 +15,16 @@ $ sudo apt-get install yosys
 ```
 $ sudo apt-get install iverilog
 ```
+![iverilog](https://github.com/user-attachments/assets/095b83bd-3923-466b-b51e-5924205fe9cf)
+
+
+
+<h2>gtkwave</h2>
+
+```
+$ sudo apt install gtkwave
+```
+![gtkwave](https://github.com/user-attachments/assets/f3f5c8eb-51e7-442d-9b19-920e006575fc)
 
 
 
