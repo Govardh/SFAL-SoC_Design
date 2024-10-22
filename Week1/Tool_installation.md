@@ -8,5 +8,7 @@ $ cd yosys-master
 $ sudo apt install make 
 $ sudo apt-get install yosys
 ```
+!![Ysoys](https://github.com/user-attachments/assets/9663e34e-639c-4bb2-a382-119a991a13b9)
+
 
 
