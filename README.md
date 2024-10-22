@@ -1,5 +1,4 @@
-# Welcome to My SoC Design and Implementation Journey!
-
+# SFAL-VSD-SoC-Design Program
 
 This repository documents my progress and key learnings from the 12-week SoC Design and Implementation course. Here, you'll find a comprehensive overview of my work, covering everything from foundational semiconductor concepts to advanced project implementations. This course, guided by industry experts, provides hands-on experience with Synopsys tools 
 
