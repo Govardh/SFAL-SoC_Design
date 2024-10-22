@@ -8,7 +8,7 @@ This repository documents my progress and key learnings from the 12-week SoC Des
 * Design Projects: Step-by-step design implementations, focusing on both foundational exercises and the final real-world project.
 * Specialization Topic: Deep dive into the area of semiconductor design that I’ve chosen to specialize in.
 
-## Tools I’m Using :
+## Tools Used :
 
 * Design Compiler : For synthesizing HDLs into gate-level representations.
 * IC Compiler : Ensuring the optimal layout of chip designs.
