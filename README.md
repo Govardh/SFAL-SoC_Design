@@ -1,20 +1,42 @@
-                                                  SoC Design and Implementation Course
-Welcome to the SoC Design and Implementation course repository! This program coveres the full spectrum of semiconductor design, equipping participants with the skills needed to master the entire SoC (System on Chip) design process. From foundational concepts to real-world design challenges, this course offers a unique blend of theoretical learning, practical application, and professional development.
+# SFAL-VSD-SoC-Design Program Progress
 
-This repository will contain all the course materials, design projects, and documentation developed during the program. 
+This repository documents my journey through the SFAL-VSD-SoC-Design program organized by NASSCOM. The program focuses on system-on-chip (SoC) design, providing hands-on experience and practical knowledge in various aspects of VLSI and SoC development.
 
-Tools - Synopsys
+## Overview of the Digital VLSI System-on-Chip (SoC) design and planning process
 
-Design Compiler : For high-quality synthesis of HDLs into gate-level representations.
+1. **Chip Modeling**
+   - Achieve equivalence between the original specification model (O0) and the C model (O1).
 
-IC Compiler : A comprehensive place and route solution ensuring optimal chip layout.
+2. **RTL Architecture**
+   - Ensure equivalence between the specification model (O1) and the Register Transfer Level (RTL) representation (O2).
 
-PrimeTime : For sign-off quality timing analysis, ensuring your design meets its timing requirements.
+3. **SoC Design Flow**
+   - Divide the chip design into processors and peripherals/IPs.
 
-StarRC : The industry standard for parasitic extraction, vital for accurate post-layout simulation and analysis.
+4. **SoC Integration**
+   - Confirm equivalence across all stages (O1 == O2 == O3).
 
-HSPICE : The gold standard for accurate circuit simulation, crucial for design verification.
+5. **GDSII Creation**
+   - Prepare graphical data structure stream information for interchange.
+   - Ensure all models are equivalent (O1 == O2 == O3 == O4).
 
-Custom Compiler : Tailored for designing custom integrated circuits with precision and efficiency.
 
-IC Validator : An essential tool for physical verification, performing DRC (Design Rule Checking) and LVS (Layout vs. Schematic) checks to ensure the design meets all manufacturing specifications.
+## Repository Structure
+
+	•	Day-wise Progress: Each folder contains a detailed breakdown of daily tasks, summaries of learning, tool installations, and code or design files.
+	•	Tools and Setup: Step-by-step documentation of the tools required for the program, along with installation guides and configuration snapshots.
+
+## Objectives
+
+	•	Learn the fundamentals of SoC design.
+	•	Gain hands-on experience with industry-standard tools and workflows.
+	•	Document daily progress to track growth and improvements.
+	•	Showcase projects and learning outcomes.
+ 
+## Learning Milestones
+
+## Task Index
+
+| Day       | Folder          | Task Description                                           |
+|-----------|------------------|-----------------------------------------------------------|
+| [Day 1](Day1/)  | `Day1/`        | 1. Tools Installation  |
