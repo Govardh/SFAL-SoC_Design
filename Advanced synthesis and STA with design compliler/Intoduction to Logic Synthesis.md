@@ -1,4 +1,3 @@
-Advanced synthesis and STA with design compliler 
 ## Logic Synthesis
 ### What is synthesis?
 RTL to gate level transistion is called synthesis.
