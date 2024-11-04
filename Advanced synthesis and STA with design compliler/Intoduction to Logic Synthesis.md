@@ -24,3 +24,14 @@ In .lib it contain fast and slow working cells. We requires fast workign cells t
 <img width="695" alt="logic_synthesis_4" src="https://github.com/user-attachments/assets/0077acf1-7764-443e-bc58-56d0af4aa084">
 <img width="659" alt="compriosn_5" src="https://github.com/user-attachments/assets/460b5fd6-656c-45bd-a709-e1fb5359062b">
 </details>
+
+<br>
+</br>
+<details>
+
+
+
+
+
+  
+</details>
