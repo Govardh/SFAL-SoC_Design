@@ -1,5 +1,6 @@
 <details> 
 <summary> Day1 : Intoduction to logic synthesis</summary>
+  
 ## Logic Synthesis
 ### What is synthesis?
 RTL to gate level transistion is called synthesis.
