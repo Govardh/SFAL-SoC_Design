@@ -26,6 +26,31 @@ In .lib it contain fast and slow working cells. We requires fast workign cells t
 </details>
 <details>
 <summary>Intro to DC</summary>
-
   
+<img width="706" alt="DC_1" src="https://github.com/user-attachments/assets/970d26c2-4184-40fb-976f-a178bf85f561">
+
+<img width="665" alt="DC_SET_UP_2" src="https://github.com/user-attachments/assets/568a7434-f540-4a00-a23d-8fca89fd203b">
+
+<img width="683" alt="ASIC_FLOW_3" src="https://github.com/user-attachments/assets/2a754a14-2025-49b6-8a7f-317e27f4cdf6">
+
+.LIB -->library which contains standard cells
+
+DB  --> same as LIB but different format.  DC uses .db format for cell libraries
+
+DDC --> format to store design information .DC can read and write out in .DDC
+
+DESIGN --> RTL models
+</details>
+<details>
+<Summary>Ivoking DC basic set up Lab 1</Summary>
+<img width="263" alt="shell_6" src="https://github.com/user-attachments/assets/4cd8db3d-9a03-420d-b016-25d5c31928ad">
+
+
+
+<img width="251" alt="linklibrary_7" src="https://github.com/user-attachments/assets/4e6a53ca-e429-4dc2-9c9c-e7b68f24ac79">
+
+
+
+<img width="614" alt="Netlist_8" src="https://github.com/user-attachments/assets/f11a1b35-2fe4-4ad1-99e8-48d7e9ea1501">
+
 </details>
