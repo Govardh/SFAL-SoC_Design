@@ -53,3 +53,15 @@ DESIGN --> RTL models
 <img width="614" alt="Netlist_8" src="https://github.com/user-attachments/assets/f11a1b35-2fe4-4ad1-99e8-48d7e9ea1501">
 <img width="578" alt="synopsys_dc_9" src="https://github.com/user-attachments/assets/c6e86a6b-956e-46f2-9500-39c2a83fbaaf">
 </details>
+<details>
+<summary> TCL Scripting </summary>
+
+set i 0 -> To setting a variable i to a value 0 
+
+echo $i -> To print the value of i in console 
+
+incr i -> To increment value of i
+
+
+  
+</details>
