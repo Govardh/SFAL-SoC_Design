@@ -42,7 +42,7 @@ DDC --> format to store design information .DC can read and write out in .DDC
 DESIGN --> RTL models
 </details>
 <details>
-<Summary>Ivoking DC basic set up Lab 1</Summary>
+<Summary>DC LABS</Summary>
 <img width="263" alt="shell_6" src="https://github.com/user-attachments/assets/4cd8db3d-9a03-420d-b016-25d5c31928ad">
 
 
@@ -50,7 +50,6 @@ DESIGN --> RTL models
 <img width="251" alt="linklibrary_7" src="https://github.com/user-attachments/assets/4e6a53ca-e429-4dc2-9c9c-e7b68f24ac79">
 
 
-
 <img width="614" alt="Netlist_8" src="https://github.com/user-attachments/assets/f11a1b35-2fe4-4ad1-99e8-48d7e9ea1501">
-
+<img width="578" alt="synopsys_dc_9" src="https://github.com/user-attachments/assets/c6e86a6b-956e-46f2-9500-39c2a83fbaaf">
 </details>
