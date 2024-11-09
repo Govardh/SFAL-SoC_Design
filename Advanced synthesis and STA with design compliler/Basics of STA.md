@@ -33,6 +33,34 @@ Delay:
 </details>
 <details>
 <summary>.lib_LAB</summary>
+default_max_transition : 1.5000000000;
+
+  
+Load capacitance is depends on output capacistance, net capacitance and input capacitance of other gate.
+This may incress the load capacitance this may leads to incress the transition.
+
+<img width="814" alt="library_lab" src="https://github.com/user-attachments/assets/caa82235-6d58-461f-b324-7226a0a0dea3">
+
+<img width="719" alt="next to flling edge" src="https://github.com/user-attachments/assets/e7c859a9-37e3-48f2-8f87-266dd6cb9154">
+
+Delay Model Look Up Table:
+It contains the delay information base on the Input transition and Output load.
+Based on tranition and load DC will calculate the delay of the gate.
+
+<img width="720" alt="Delay_model_table" src="https://github.com/user-attachments/assets/942c6d9b-5813-4246-bdf4-f547defc02cc">
+
+Unetness:
+OR and AND gate ---> have positive unetbess.
+
+NOT, NAND and NOR--->negative unetness.
+
+XOR ---->both positive and negative unetness.
+
+<img width="602" alt="unateness_" src="https://github.com/user-attachments/assets/5d127f28-c4e1-41a2-ad67-653b932a37c1">
+
+
+
+
 
 
 
