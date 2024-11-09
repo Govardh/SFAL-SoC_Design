@@ -62,6 +62,11 @@ echo $i -> To print the value of i in console
 
 incr i -> To increment value of i
 
+## TCL Scripting of : For_loop , while_loop and creating_list
+<img width="271" alt="tcl" src="https://github.com/user-attachments/assets/cea0607c-baa9-4919-928e-a9793e40e321">
 
+<img width="227" alt="tcl_2" src="https://github.com/user-attachments/assets/abb9fda4-31a3-4202-8c66-fefe3b46355a">
+
+<img width="419" alt="tcl_list" src="https://github.com/user-attachments/assets/cd5c1c20-5f79-40cf-846b-95d3d8478024">
   
 </details>
