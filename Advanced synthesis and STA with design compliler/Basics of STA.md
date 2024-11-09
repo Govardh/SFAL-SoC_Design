@@ -50,6 +50,7 @@ Based on tranition and load DC will calculate the delay of the gate.
 <img width="720" alt="Delay_model_table" src="https://github.com/user-attachments/assets/942c6d9b-5813-4246-bdf4-f547defc02cc">
 
 Unetness:
+
 OR and AND gate ---> have positive unetbess.
 
 NOT, NAND and NOR--->negative unetness.
@@ -59,20 +60,10 @@ XOR ---->both positive and negative unetness.
 <img width="602" alt="unateness_" src="https://github.com/user-attachments/assets/5d127f28-c4e1-41a2-ad67-653b932a37c1">
 
 
+<img width="821" alt="unate" src="https://github.com/user-attachments/assets/f4b54548-4e9c-43c1-9954-bba5099a93fa">
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+<img width="719" alt="next to flling edge" src="https://github.com/user-attachments/assets/e7c859a9-37e3-48f2-8f87-266dd6cb9154">
 
 
 
