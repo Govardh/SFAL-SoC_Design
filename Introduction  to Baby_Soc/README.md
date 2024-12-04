@@ -27,6 +27,8 @@ A digital-to-analog converter or DAC is a system that converts a digital signal 
 
 - Modelling is the use of physical or logical reprasentation ( basicially the circuits ) to generate data.
 - Modeling refers to creating a simplified representation of a system, process, or concept to analyze, understand, predict, or optimize its behavior
+
+![baby soc modelling](https://github.com/user-attachments/assets/5c2de1f3-95c6-487b-ab0d-733412d458c0)
   
 Here we are going to model and simulate the VSDBabySoC using `iverilog`, then we will show the results using `gtkwave` tool. Some initial input signals will be fed into `vsdbabysoc` module that make the pll start generating the proper `CLK` for the circuit. The clock signal will make the `rvmyth` to execute instructions in its `imem`. As a result the register `r17` will be filled with some values cycle by cycle. These values are used by dac core to provide the final output signal named `OUT`. So we have 3 main elements (IP cores) and a wrapper as an SoC and of-course there would be also a testbench module out there.
 ### Project Structure
