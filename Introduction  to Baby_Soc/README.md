@@ -23,7 +23,11 @@ A phase-locked loop or PLL is a control system that generates an output signal w
 A digital-to-analog converter or DAC is a system that converts a digital signal into an analog signal. DACs are widely used in modern communication systems enabling the generation of digitally-defined transmission signals. As a result, high-speed DACs are used for mobile communications and ultra-high-speed DACs are employed in optical communications systems.
 
 # VSDBabySoC Modeling
+<h3>Whats is Modelling</h3>
 
+- Modelling is the use of physical or logical reprasentation ( basicially the circuits ) to generate data.
+- Modeling refers to creating a simplified representation of a system, process, or concept to analyze, understand, predict, or optimize its behavior
+  
 Here we are going to model and simulate the VSDBabySoC using `iverilog`, then we will show the results using `gtkwave` tool. Some initial input signals will be fed into `vsdbabysoc` module that make the pll start generating the proper `CLK` for the circuit. The clock signal will make the `rvmyth` to execute instructions in its `imem`. As a result the register `r17` will be filled with some values cycle by cycle. These values are used by dac core to provide the final output signal named `OUT`. So we have 3 main elements (IP cores) and a wrapper as an SoC and of-course there would be also a testbench module out there.
 ### Project Structure
 The project is organized in the following way:
