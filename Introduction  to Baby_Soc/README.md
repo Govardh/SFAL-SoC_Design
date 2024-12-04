@@ -49,12 +49,10 @@ iverilog -o output/pre_synth_sim/pre_synth_sim.out -DPRE_SYNTH_SIM \
 cd output/pre_synth_sim
 ./pre_synth_sim.out
 ```
-![rvmyth-2](https://github.com/user-attachments/assets/8d9c3f9b-a1c7-41bb-8304-4975d051e529)
-
 ![RVMYTH](https://github.com/user-attachments/assets/34130c18-0eee-4245-8f58-67fb40dda180)
 
-![rvmyt-1](https://github.com/user-attachments/assets/9539deff-56bd-43a5-9d50-0509bcfe765e)
 
+![rymth new](https://github.com/user-attachments/assets/cda2a0af-b710-4cff-bc4d-e1e2cc5aa243)
 
 **Explanation:**
    - -DPRE_SYNTH_SIM: Defines the PRE_SYNTH_SIM macro for conditional compilation in the testbench.
