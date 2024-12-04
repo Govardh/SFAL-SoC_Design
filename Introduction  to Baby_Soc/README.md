@@ -33,4 +33,46 @@ The project is organized in the following way:
 
 - **`output/`**: The **output directory** is where all the generated files from the compilation and simulation processes will be stored. This includes compiled files, waveform files, and any other results generated from running simulations.
 
+- The project involves two key stages of simulation:
+
+1. **Pre-synthesis simulation**: This is done before any synthesis of the design (mapping it to actual hardware) and focuses on simulating the RTL (Register Transfer Level) design to ensure functional correctness.
+  
+2. **Post-synthesis simulation**: This is done after synthesis has been performed and takes into account how the design will behave once it is mapped to the actual hardware (e.g., gates, flip-flops, etc.). It is used to verify that the design will work as intended on actual hardware.
+### Simulation Steps
+#### Pre-Synthesis Simulation
+Run the following command to perform a pre-synthesis simulation:
+
+```tcl
+iverilog -o output/pre_synth_sim/pre_synth_sim.out -DPRE_SYNTH_SIM \
+    -I src/include -I src/module \
+    src/module/testbench.v src/module/vsdbabysoc.v
+cd output/pre_synth_sim
+./pre_synth_sim.out
+```
+![rvmyth-2](https://github.com/user-attachments/assets/8d9c3f9b-a1c7-41bb-8304-4975d051e529)
+
+![RVMYTH](https://github.com/user-attachments/assets/34130c18-0eee-4245-8f58-67fb40dda180)
+
+![rvmyt-1](https://github.com/user-attachments/assets/9539deff-56bd-43a5-9d50-0509bcfe765e)
+
+
+**Explanation:**
+   - -DPRE_SYNTH_SIM: Defines the PRE_SYNTH_SIM macro for conditional compilation in the testbench.
+   - The resulting pre_synth_sim.vcd file can be viewed in GTKWave.
+
+#### Viewing Waveform in GTKWave
+After running the simulation, open the VCD file in GTKWave:
+`gtkwave output/pre_synth_sim/pre_synth_sim.vcd`
+
+#### Post-Synthesis Simulation
+To run a post-synthesis simulation, use:
+```tcl
+iverilog -o output/post_synth_sim/post_synth_sim.out -DPOST_SYNTH_SIM \
+    -I src/include -I src/module \
+    src/module/testbench.v output/synthesized/vsdbabysoc.synth.v
+cd output/post_synth_sim
+./post_synth_sim.out
+```
+
+
 
