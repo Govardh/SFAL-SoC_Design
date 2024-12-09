@@ -138,19 +138,8 @@ writing  .db file `write_lib avsddac -format db -output avsddac.db`
 
 ### Converting `avsdpll.lib` to `avsdpll.db`
 
----
-
-`cd Desktop/hemanth/VLSI/VSDBabySOC/src/lib/`
-
-<img width="739" alt="Screenshot 2024-11-08 at 12 12 58 PM" src="https://github.com/user-attachments/assets/6257df5a-5775-45dc-adc9-9d49a949f917">
-
----
-
 Launch `lc_shell`
 
-<img width="736" alt="Screenshot 2024-11-08 at 12 13 45 PM" src="https://github.com/user-attachments/assets/1ded9195-26bc-46f6-bab3-b68618b7fde3">
-
----
 
 Reading avsdpll library `read_lib avsdpll.lib`
 
@@ -173,12 +162,6 @@ First, download the .lib file
 
 
 ![wget_skywater new](https://github.com/user-attachments/assets/6d052f6c-b162-4a02-8756-6d046ebe3e9e)
-
----
-
-Launch `lc_shell`
-
-<img width="736" alt="Screenshot 2024-11-08 at 12 13 45 PM" src="https://github.com/user-attachments/assets/1ded9195-26bc-46f6-bab3-b68618b7fde3">
 
 ---
 
@@ -214,8 +197,6 @@ Launch `dc_shell`
 
 `set link_library {* /home/govardh/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.db /home/govardh/VSDBabySoC/src/lib/avsdpll.db /home/govardh/VSDBabySoC/src/lib/avsddac.db}`
 
-
----
 
 `set search_path {/home/govardh/VSDBabySoC/src/include /home/govardh/VSDBabySoC/src/module}`
 
