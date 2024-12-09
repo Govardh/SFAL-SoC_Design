@@ -266,6 +266,34 @@ Verify Pre-Synthesis vs Post-Synthesis
 
 <img width="544" alt="Screenshot 2024-11-08 at 12 56 27 PM" src="https://github.com/user-attachments/assets/40470752-b8ed-4381-9c6a-60682739ef38">
 
+# Pre-Synthesis vs Post-Synthesis Comparison
+
+| **Parameter**                | **Pre-Synthesis**                          | **Post-Synthesis**                          |
+|------------------------------|--------------------------------------------|--------------------------------------------|
+| **Simulation Type**           | Behavioral (RTL level, ideal functionality)| Gate-Level Simulation (GLS, with gate delays) |
+| **Clock Signal (`CLK`)**      | Clean toggling (ideal clock)               | Toggling with real gate delays             |
+| **Digital Transitions**       | Smooth and instantaneous                   | Timing skew due to gate delays             |
+| **Analog Output (`OUT`)**     | Smooth ideal triangular waveform           | Realistic waveform with delays             |
+| **Timing Effects**            | Ideal, no delays                          | Includes realistic delays and skews        |
+| **Waveform Artifacts**        | Minimal artifacts                         | Timing glitches or artifacts introduced    |
+| **Performance Simulation**    | Faster simulation (no timing delays)      | Slower simulation due to delay modeling    |
+
+---
+
+### Explanation of Parameters
+
+1. **Simulation Type**  
+   - Pre-Synthesis uses **RTL-level behavioral simulation** where delays are ignored.
+   - Post-Synthesis includes **gate delays**, making it closer to real hardware behavior.
+
+2. **Clock Signal (`CLK`)**  
+   - In Pre-Synthesis, the clock toggles ideally without noise or timing effects.
+   - In Post-Synthesis, realistic clock behavior accounts for delays.
+
+3. **Digital Transitions**  
+   - Pre-Synthesis transitions occur instantaneously.
+   - Post-Synthesis transitions have delays a
+
 ---
 </details>
 
