@@ -57,8 +57,6 @@ The project is organized in the following way:
 
 - **`output/`**: The **output directory** is where all the generated files from the compilation and simulation processes will be stored. This includes compiled files, waveform files, and any other results generated from running simulations.
 
-<h3>Modelling 3 main IP core </h3>
-
 - The project involves two key stages of simulation:
 
 1. **Pre-synthesis simulation**: Pre-synthesis occurs before the design is synthesized into a gate-level netlist. The design is described at the Register Transfer Level (RTL), usually in hardware description languages like Verilog.It focuses on simulating the RTL (Register Transfer Level) design to ensure functional correctness.
@@ -76,7 +74,9 @@ The project is organized in the following way:
 
    
 ### Simulation Steps
-#### Pre-Synthesis Simulation
+<details>
+
+<sumary>#### Pre-Synthesis Simulation<summary/>
 Run the following command to perform a pre-synthesis simulation:
 
 ```tcl
@@ -104,7 +104,9 @@ iverilog -o output/post_synth_sim/post_synth_sim.out -DPOST_SYNTH_SIM \
 cd output/post_synth_sim
 ./post_synth_sim.out
 ```
-<h2>Post-Synthesis Simulation (Gate Level Simulation) of BabySoC</h2>
+<details/>
+<details>
+<summary> <h2>Post-Synthesis Simulation (Gate Level Simulation) of BabySoC</h2> </summary>
 
 ## Setting Up the Environment
 
@@ -265,6 +267,6 @@ Verify Pre-Synthesis vs Post-Synthesis
 <img width="544" alt="Screenshot 2024-11-08 at 12 56 27 PM" src="https://github.com/user-attachments/assets/40470752-b8ed-4381-9c6a-60682739ef38">
 
 ---
-
+</details>
 
 
