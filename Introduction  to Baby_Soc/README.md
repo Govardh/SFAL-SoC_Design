@@ -75,8 +75,7 @@ The project is organized in the following way:
    
 ### Simulation Steps
 <details>
-
-<sumary>#### Pre-Synthesis Simulation<summary/>
+<summary> <h2>Pre-Synthesis Simulation </h2> </summary>
 Run the following command to perform a pre-synthesis simulation:
 
 ```tcl
@@ -104,8 +103,9 @@ iverilog -o output/post_synth_sim/post_synth_sim.out -DPOST_SYNTH_SIM \
 cd output/post_synth_sim
 ./post_synth_sim.out
 ```
-<details/>
+</details>
 <details>
+    
 <summary> <h2>Post-Synthesis Simulation (Gate Level Simulation) of BabySoC</h2> </summary>
 
 ## Setting Up the Environment
