@@ -297,4 +297,5 @@ Verify Pre-Synthesis vs Post-Synthesis
 ---
 </details>
 
+**Pre-synthesis simulation**
 
