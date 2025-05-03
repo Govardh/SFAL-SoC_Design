@@ -329,7 +329,7 @@ TCL_SCRIPT="lib2db.tcl"
 $LC_SHELL_PATH -f $TCL_SCRIPT
 ```
 
-![Image](https://github.com/user-attachments/assets/822b8f3a-9e36-4080-8446-b70c171459f3)
+<img width="737" alt="Screenshot 2024-11-11 at 5 28 29 PM" src="https://github.com/user-attachments/assets/80664bb4-aa98-4991-9a11-74701176c76f">
 
 ---
 
