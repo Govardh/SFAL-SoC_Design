@@ -297,7 +297,237 @@ Verify Pre-Synthesis vs Post-Synthesis
 ---
 </details>
  <details>
-    <summary>▶ PVT corner</summary>
-    <p>Details about PVT corner simulations (e.g., TT, SS, FF, etc.).</p>
+    <summary><h2> PVT corner  <h2> </summary>
+    What are PVT Corners?
+
+PVT Corners represent the extremes of Process, Voltage, and Temperature conditions:
+
+  - Process Corners: Variations in manufacturing can lead to Fast (F), Typical (T), or Slow (S) transistor speeds.
+  - Voltage Corners: The design’s voltage can vary, with nominal (N), high (H), and low (L) values.
+  - Temperature Corners: Temperature affects semiconductor performance, with testing at low, typical, and high extremes.
+
+By analyzing these corners, we ensure the design is robust under diverse conditions.
+
+## Generating PVT Timing Libraries
+
+  - **Download Libraries:** Obtain .lib files for different corners from [Skywater PDK timing libraries](https://github.com/efabless/skywater-pdk-libs-sky130_fd_sc_hd/tree/master/timing).
+  - **Convert .lib to .db:** Using Synopsys LC Shell, convert the .lib files to .db format for use in synthesis.
+
+---
+
+## Script to convert .lib files to .db
+
+Create a bash file `nano conversion.sh`.
+
+```bash
+#!/bin/sh
+
+LC_SHELL_PATH="/usr/synopsys/lc/T-2022.03-SP5/bin/lc_shell"
+TCL_SCRIPT="lib2db.tcl"
+
+#Execute the lc_shell with the specified TCL script
+$LC_SHELL_PATH -f $TCL_SCRIPT
+```
+
+<img width="737" alt="Screenshot 2024-11-11 at 5 28 29 PM" src="https://github.com/user-attachments/assets/80664bb4-aa98-4991-9a11-74701176c76f">
+
+---
+
+Make diretory `mkdir db_files`
+Create TCL file `nano lib2db.tcl`.
+
+```tcl
+# convert_lib_to_db.tcl
+set lib_files_dir "/home/govardh/VSDBabySoC/src/Timing/timing";
+set db_output_dir "/home/govardh/VSDBabySoC/src/db_files";
+foreach lib_file [glob -nocomplain $lib_files_dir/*.lib] {
+set base_name [file rootname [file tail $lib_file]]
+set db_file "$db_output_dir/${base_name}.db"
+
+if {[llength [list_libs]] > 0} {
+    remove_lib [lindex [list_libs] 0]
+}
+
+read_lib $lib_file
+
+write_lib $base_name -format db -output $db_file
+
+if {[llength [list_libs]] > 0} {
+    remove_lib [lindex [list_libs] 0]
+}
+}
+exit
+```
+
+<img width="650" alt="Screenshot 2024-11-11 at 5 30 02 PM" src="https://github.com/user-attachments/assets/09ee4d59-e7c1-456c-9657-d61d2ea2e842">
+
+---
+
+run `./conversion.sh
+
+--- 
+
+## Output in db_files
+
+<img width="1440" alt="Screenshot 2024-11-11 at 5 31 47 PM" src="https://github.com/user-attachments/assets/e7dce70d-b3ee-4899-a905-926a8ad526a2">
+
+---
+
+## Multi-PVT Corner Synthesis Script
+
+---
+
+Create bash file `nano pvt_corners.sh`
+
+```bash
+#!/bin/bash
+TCL_SCRIPT_PATH="/home/govardh/VSDBabySoC/src/script/pvt_corners.tcl"
+LOG_FILE="/home/govardh/VSDBabySoC/src/dc_shell.log"
+
+# Run the TCL script within dc_shell
+dc_shell -f $TCL_SCRIPT_PATH | tee $LOG_FILE
+```
+
+<img width="659" alt="Screenshot 2024-11-11 at 5 33 20 PM" src="https://github.com/user-attachments/assets/ac9ffe7f-9e05-4fde-a6c4-2db541e49879">
+
+---
+
+To perform synthesis across multiple PVT corners.
+
+`cd script`
+Create TCL file `pvt_corners.tcl`
+
+```tcl
+# timing_multi_pvt_corners.tcl
+set file_handle [open report_timing.rpt w]
+puts $file_handle "PVT_Corner\tWNS\tWHS"
+
+set lib_files [glob -directory /home/govardh/VSDBabySoC/src/db_files/ -type f *.db]
+
+foreach lib_file_paths $lib_files {
+
+regexp {.*\/sky130_fd_sc_hd__(.*)\.db$} $lib_file_paths full_match pvt_corners
+
+set timing_report_fast_mode true
+
+set target_library $lib_file_paths
+set link_library {* /home/govardh/VSDBabySoC/src/lib/avsdpll.db /home/govardh/VSDBabySoC/src/lib/avsddac.db}
+lappend link_library $target_library
+set search_path {/home/govardh/VSDBabySoC/src/include /home/govardh/VSDBabySoC/src/module}
+read_file {sandpiper_gen.vh  sandpiper.vh  sp_default.vh  sp_verilog.vh clk_gate.v rvmyth.v rvmyth_gen.v vsdbabysoc.v} -autoread -top vsdbabysoc
+read_sdc /home/govardh/VSDBabySoC/src/sdc/vsdbabysoc_synthesis.sdc
+link
+compile_ultra
+
+set wns [get_attribute [get_timing_paths -delay_type max -max_paths 1] slack]
+set whs [get_attribute [get_timing_paths -delay_type min -max_paths 1] slack]
+
+puts $file_handle "$pvt_corners\t$wns\t$whs"
+
+reset_design
+}
+
+close $file_handle
+exit
+```
+
+<img width="1103" alt="Screenshot 2024-11-11 at 5 35 54 PM" src="https://github.com/user-attachments/assets/fb98f8a6-0e53-43e7-ab22-907bf73baed8">
+
+---
+
+run `pvt_corners.sh`
+
+---
+
+`nano report_timing.rpt`
+
+<img width="708" alt="Screenshot 2024-11-11 at 5 42 18 PM" src="https://github.com/user-attachments/assets/c941623c-634d-41dd-96ff-907d2fb9264a">
+
+---
+
+# Timing Analysis Report for VSDBabySoC
+
+This report provides an analysis of timing slack values across various Process, Voltage, and Temperature (PVT) corners for the VSDBabySoC. 
+
+## PVT Timing Report Table
+
+| PVT Corner       | Worst Negative Slack (WNS) | Worst Hold Slack (WHS) |
+|------------------|----------------------------|-------------------------|
+| ff_100C_1v65     | 0.0046                     | -0.2449                |
+| ff_100C_1v95     | 0.2279                     | -0.2986                |
+| ff_n40C_1v56     | 0.0493                     | -0.2017                |
+| ff_n40C_1v65     | 0.0183                     | -0.2386                |
+| ff_n40C_1v76     | 0.0322                     | -0.2698                |
+| ff_n40C_1v95     | 0.0913                     | -0.3071                |
+| ss_100C_1v40     | 0.0060                     | 0.4140                 |
+| ss_100C_1v60     | 1.7014                     | 0.1493                 |
+| ss_n40C_1v28     | -2.1464                    | 1.2782                 |
+| ss_n40C_1v35     | 0.0016                     | 0.8259                 |
+| ss_n40C_1v40     | 0.0035                     | 0.6072                 |
+| ss_n40C_1v44     | 0.0013                     | 0.4990                 |
+| ss_n40C_1v60     | 0.0063                     | 0.1696                 |
+| ss_n40C_1v76     | 0.0054                     | -0.0056                |
+| tt_025C_1v80     | 0.1988                     | -0.1840                |
+| tt_100C_1v80     | 0.0027                     | -0.1792                |
+
+--- 
+
+## Analysis of the Timing Report
+
+Each row in the report lists:
+
+  - PVT Corner: Indicates the specific process, voltage, and temperature condition tested.
+  - Worst Negative Slack (WNS): The most negative slack value for setup timing (data arriving late).
+    - Goal: Keep WNS close to zero or positive, meaning data arrives on time.
+  - Worst Hold Slack (WHS): The worst slack for hold timing (data held too long).
+    - Goal: Ensure WHS is positive or minimal, indicating stability of data until the next clock edge.
+
+---
+
+### Key Observations
+
+- **Fast-Fast Corners (`ff`)**:
+  - The **WNS** values are positive, indicating that setup timing is generally met in fast process conditions.
+  - The **WHS** values are negative in most cases, particularly at higher voltages (e.g., `ff_n40C_1v95`), suggesting potential hold timing violations. Negative WHS means data may not be stable long enough before the next clock edge.
+
+- **Slow-Slow Corners (`ss`)**:
+  - **WNS** is positive for most corners, except for `ss_n40C_1v28` (-2.1464), indicating a setup timing issue at very low voltage.
+  - **WHS** is generally positive or near zero, implying that hold timing is likely met at slower conditions.
+
+### Interpretation for Design Robustness
+
+- **Negative WHS** indicates a need for hold-time buffers in cases like the fast-fast (ff) corners.
+- **Negative WNS** points to setup timing issues that may benefit from optimizing the logic path or pipeline stages.
+
+### Selected PVT Corners for Detailed Analysis
+
+To verify robustness, the following corners were chosen:
+1. **ss_n40C_1v28 with WNS of -2.14636**: Extreme slow process at low temperature and voltage for worst-case setup timing analysis.
+2. **ff_100C_1v95 with WHS of -0.307088**: Fast process at high temperature and voltage for hold timing stability during peak performance.
+
+---
+
+### Graphs
+
+---
+
+**WNS vs PVT_corners**
+
+![WNS vs  PVT_Corner](https://github.com/user-attachments/assets/0a69b123-6a39-4ef9-9af4-d29f1e4e150c)
+
+---
+
+**WHS vs PVT_corners**
+
+![   WHS vs  PVT_Corner](https://github.com/user-attachments/assets/f313be48-ddbd-4fb3-92a7-9bc5d75480bb)
+
+---
+
+**WHS and WNS**
+
+![   WHS and WNS](https://github.com/user-attachments/assets/169494cf-a5c9-4e76-97a0-b3a99db2a041)
+
+---
+
   </details>
 
