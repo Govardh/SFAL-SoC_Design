@@ -380,7 +380,7 @@ run `./conversion.sh
 
 ## Output in db_files
 
-<img width="1440" alt="Screenshot 2024-11-11 at 5 31 47 PM" src="https://github.com/user-attachments/assets/e7dce70d-b3ee-4899-a905-926a8ad526a2">
+![Image](https://github.com/user-attachments/assets/08f3f31b-205f-4d61-9479-6a0bd0bb5166)
 
 ---
 
@@ -399,7 +399,7 @@ LOG_FILE="/home/govardh/VSDBabySoC/src/dc_shell.log"
 dc_shell -f $TCL_SCRIPT_PATH | tee $LOG_FILE
 ```
 
-<img width="659" alt="Screenshot 2024-11-11 at 5 33 20 PM" src="https://github.com/user-attachments/assets/ac9ffe7f-9e05-4fde-a6c4-2db541e49879">
+![Image](https://github.com/user-attachments/assets/822b8f3a-9e36-4080-8446-b70c171459f3)
 
 ---
 
