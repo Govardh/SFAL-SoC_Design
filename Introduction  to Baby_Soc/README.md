@@ -442,7 +442,7 @@ close $file_handle
 exit
 ```
 
-![Image](https://github.com/user-attachments/assets/2e79c381-d98f-4f03-a20d-42cd8d152ce4)
+![Image](https://github.com/user-attachments/assets/87473037-1825-4097-ae53-1586d3a42fde)
 
 ---
 
