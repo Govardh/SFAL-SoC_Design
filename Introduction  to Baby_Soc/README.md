@@ -297,7 +297,7 @@ Verify Pre-Synthesis vs Post-Synthesis
 ---
 </details>
  <details>
-    <summary><h2> PVT corner  <h2> </summary>
+    <summary><h2> PVT Corner Timing Analysis <h2> </summary>
     What are PVT Corners?
 
 PVT Corners represent the extremes of Process, Voltage, and Temperature conditions:
