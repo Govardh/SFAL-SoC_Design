@@ -296,6 +296,8 @@ Verify Pre-Synthesis vs Post-Synthesis
 
 ---
 </details>
-
-**PVT corner**
+ <details>
+    <summary>▶ PVT corner</summary>
+    <p>Details about PVT corner simulations (e.g., TT, SS, FF, etc.).</p>
+  </details>
 
