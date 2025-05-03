@@ -329,7 +329,7 @@ TCL_SCRIPT="lib2db.tcl"
 $LC_SHELL_PATH -f $TCL_SCRIPT
 ```
 
-<img width="737" alt="Screenshot 2024-11-11 at 5 28 29 PM" src="https://github.com/user-attachments/assets/80664bb4-aa98-4991-9a11-74701176c76f">
+![Image](https://github.com/user-attachments/assets/822b8f3a-9e36-4080-8446-b70c171459f3)
 
 ---
 
@@ -338,28 +338,39 @@ Create TCL file `nano lib2db.tcl`.
 
 ```tcl
 # convert_lib_to_db.tcl
-set lib_files_dir "/home/govardh/VSDBabySoC/src/Timing/timing";
-set db_output_dir "/home/govardh/VSDBabySoC/src/db_files";
-foreach lib_file [glob -nocomplain $lib_files_dir/*.lib] {
-set base_name [file rootname [file tail $lib_file]]
-set db_file "$db_output_dir/${base_name}.db"
+set lib_files_dir "/home/VSDBabySoC/src/lib/skywater-pdk-libs-sky130_fd_sc_hd/timing";
+set db_output_dir "/home/VSDBabySoC/src/lib/db_files";
 
-if {[llength [list_libs]] > 0} {
-    remove_lib [lindex [list_libs] 0]
-}
+# Debug: print lib path and found files
+puts "Looking for .lib files in: $lib_files_dir"
+set lib_files [glob -nocomplain $lib_files_dir/*.lib]
+puts "Found [llength $lib_files] .lib files"
+puts $lib_files
 
-read_lib $lib_file
+foreach lib_file $lib_files {
+    set base_name [file rootname [file tail $lib_file]]
+    set db_file "$db_output_dir/${base_name}.db"
+    puts "Converting $lib_file to $db_file"
+    
+    if {[llength [list_libs]] > 0} {
+        remove_lib [lindex [list_libs] 0]
+    }
 
-write_lib $base_name -format db -output $db_file
+    read_lib $lib_file
 
-if {[llength [list_libs]] > 0} {
-    remove_lib [lindex [list_libs] 0]
-}
+    write_lib $base_name -format db -output $db_file
+
+    if {[llength [list_libs]] > 0} {
+        remove_lib [lindex [list_libs] 0]
+    }
 }
 exit
+
+pvt_corners.tcl
+
 ```
 
-<img width="650" alt="Screenshot 2024-11-11 at 5 30 02 PM" src="https://github.com/user-attachments/assets/09ee4d59-e7c1-456c-9657-d61d2ea2e842">
+![Image](https://github.com/user-attachments/assets/b27e83b3-2741-42bc-a7d6-2c2ac9203ca8)
 
 ---
 
