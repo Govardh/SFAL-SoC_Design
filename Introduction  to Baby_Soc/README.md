@@ -442,7 +442,7 @@ close $file_handle
 exit
 ```
 
-<img width="1103" alt="Screenshot 2024-11-11 at 5 35 54 PM" src="https://github.com/user-attachments/assets/fb98f8a6-0e53-43e7-ab22-907bf73baed8">
+![Image](https://github.com/user-attachments/assets/2e79c381-d98f-4f03-a20d-42cd8d152ce4)
 
 ---
 
